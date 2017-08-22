@@ -1,18 +1,20 @@
 # TRIVIAL-WITH
 
-There are many Lisp idioms prefixed with `WITH-`.  By containing an environment (and often hiding the cleanup code) they make Lisp a great language.  However, a lot of nested `WITH-` clauses becomes a visual nuisance.
+`TRIVIAL-WITH` is a simple library designed to contain multiple levels of `WITH-` invocations into a single `WITH:-` form.  
 
-`TRIVIAL-WITH` is a simple library designed to contain multiple levels of `WITH-` invocations into a single `WITH:-` form.
+There are many Lisp idioms prefixed with `WITH-`.  By containing an environment (and often hiding the cleanup code) they make Lisp a great language.  However, having a lot of nested `WITH-` forms is a visual nuisance.
 
 It is implemented as a macro that expands into nested `WITH-xxx` forms.  So you can:
 ```
 (with:all
   ((open-file (in "my-file"))
    (slots (x y) rect)
+   (foreign-slots ...
    ...)
  ...
 )
 ```
+
 
 # NOTES
 

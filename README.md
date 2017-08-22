@@ -4,7 +4,7 @@
 
 There are many Lisp idioms prefixed with `WITH-`.  By containing an environment (and often hiding the cleanup code) they make Lisp a great language.  However, having a lot of nested `WITH-` forms is a visual nuisance.
 
-It is implemented as a macro that expands into nested `WITH-xxx` forms.  So you can:
+`with:all` is implemented as a macro that expands into nested `WITH-xxx` forms.  Because it expands syntactically, you may use it with any Lisp macro that starts with the characters "WITH-".
 ```
 (with:all
   ((open-file (in "my-file"))
